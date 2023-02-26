@@ -1,0 +1,70 @@
+{{template "header.html"}}
+
+
+<body>
+
+
+    <table class="table-auto w-full text-left">
+        <thead>
+          <tr class="bg-gray-200">
+           
+            <th class="px-4 py-2 font-bold">FirstName</th>
+            <th class="px-4 py-2 font-bold">LastName</th>
+            <th class="px-4 py-2 font-bold">Class</th>
+            <th class="px-4 py-2 font-bold">StudentRoll</th>
+     
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="bg-white">
+            <td class="border px-4 py-2"> {{.SelectedMark.FirstName}}</td>
+            <td class="border px-4 py-2"> {{.SelectedMark.LastName}}</td>
+            <td class="border px-4 py-2"> {{.SelectedMark.Class}}</td>
+            <td class="border px-4 py-2"> {{.SelectedMark.StudentRoll}}</td>
+          
+          
+
+
+       
+          </tr>
+        </tbody>
+
+      </table>
+     
+      <table class="table-auto w-full text-left">
+        <thead>
+          <tr class="bg-gray-200">     
+            <th class="px-4 py-2 font-bold">Subject</th>
+            <th class="px-4 py-2 font-bold">Mark</th>
+            <th class="px-4 py-2 font-bold">Action</th>
+         
+          </tr>
+        </thead>
+        {{range .SelectedStu}}
+        <tbody>
+          <tr class="bg-white">
+            <td class="border px-4 py-2">{{.Subject1}}</td>
+            <td class="border px-4 py-2">{{.Marks}}</td>
+
+            <!-- <td class="border px-4 py-2">
+            
+              <a  class="text-red-600 hover:text-red-900" href="">Edit</a>
+             
+            </td> -->
+          </tr>
+        </tbody>
+        {{end}}
+      </table>
+
+     
+
+     
+      
+
+       
+     
+</body>
+
+
+{{ template "footer.html"}}

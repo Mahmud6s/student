@@ -1,0 +1,42 @@
+{{template "header.html"}}
+<body>
+  <div class="flex justify-center">
+    <a href="/subject/create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Create Subject  
+      </a>
+     
+      <form action="/subject/list" method="get" class="space-x-4 ml-8">
+        <input type="text" class="px-5 py-2 font-medium text-green-900 border border-b-4 border-r-4 border-green-600 rounded-lg shadow-lg " name="SearchTerm" id="term" value="{{ .SearchTerm}}">
+        <input type="submit" value="Search">
+      </form> 
+
+</div>
+
+<table class="table-auto w-full text-left">
+  <thead>
+    <tr class="bg-gray-300">
+      <th class="px-4 py-2 text-gray-800">ID</th>
+      <th class="px-4 py-2 text-gray-800">Class Name</th>
+      <th class="px-4 py-2 text-gray-800">Subject</th>
+      <th class="px-4 py-2 text-gray-800">Action</th>
+    </tr>
+  </thead>
+  {{range.StSubject}}
+  <tbody>
+    <tr class="bg-white">
+      <td class="border px-4 py-2">{{ .ID }}</td>
+      <td class="border px-4 py-2">{{ .Class }}</td>
+      <td class="border px-4 py-2">{{ .Subject1 }}</td>
+
+      <td class="border px-4 py-2">
+        <a href="/subject/{{.ID}}/edit" class="text-indigo-600 hover:text-indigo-900 mr-2">Edit</a>
+        <a href="/subject/{{.ID}}/delete" class="text-red-600 hover:text-red-900">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+  {{end}}
+</table>
+
+</body>
+
+{{ template "footer.html"}}

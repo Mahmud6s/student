@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <title>Header </title>
+</head>
+<body>
+    
+
+      <nav class="container flex justify-around py-8 mx-auto bg-white">
+        <div class="flex items-center">
+          <h3 class="text-2xl font-medium text-pink-500">STUDENT MANAGEMENT</h3>
+        </div>
+        <!-- left header section -->
+        <div class="items-center hidden space-x-8 lg:flex">
+          <a href="">Home</a>
+          <a href="/users" class="text-green-500 hover:text-green-700"><strong>User List</strong></a>
+          <a href="/class/list">Class List</a>
+          <a href="/student/list">Student List</a>
+          <a href="/subject/list">Subject List</a>
+          <a href="/marks/create">Marks</a>
+        </div>
+        <!-- right header section -->
+        <div class="flex items-center space-x-2">
+          <a class="px-4 py-2 text-pink-100 bg-blue-600 rounded-md" href="/users/create">User Sing up</a>
+          <a class="px-4 py-2 text-blue-100 bg-blue-700 rounded-md" href="/login">Log in</a>
+          <a class="px-4 py-2 text-blue-100 bg-blue-800 rounded-md" href="/logout">Log out</a>
+        </div>
+      </nav>
+      
+</body>
+</html>
+
+
+
+
+
+
+ 

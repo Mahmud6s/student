@@ -1,0 +1,29 @@
+
+  <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+<div class="flex">
+  <div class="mb-4 mr-4">
+    {{if eq .StSubject.ID 0 }}
+    <select class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-yellow-100" name="Class" id="" value="{{.StSubject.Class}}">
+      <option value="">Select A Class<option>
+      {{ range .ListClass}}
+      <option value="{{.ID }}">{{.ClassName}}</option>
+      {{ end }}
+    </select>
+    {{end}}
+  </div>
+
+
+  <div class="mb-4">
+    {{if eq .StStudent.ID 0 }}
+    <select class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-blue-100" name="Student" id="" value="">
+      <option value="">Select A Student<option>
+      {{ range .ListStudent}}
+      <option value="{{.ID }}">{{.FirstName}} {{.LastName}}</option>
+      {{ end }}
+    </select>
+    {{end}}
+  </div>
+</div>
+
+
+

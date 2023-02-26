@@ -1,0 +1,26 @@
+{{template "header.html"}}
+
+
+<body>  
+          <!-- component -->
+<div class="flex items-center justify-center p-12">
+
+  <div class="mx-auto w-full max-w-[550px]">
+    <form action="/users/{{.User.ID}}/update" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      {{template "_form.html" .}}
+
+      <div>
+        <button
+          class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+
+{{ template "footer.html"}}
+

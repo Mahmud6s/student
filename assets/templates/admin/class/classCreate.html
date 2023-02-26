@@ -1,0 +1,23 @@
+{{template "header.html"}}
+
+
+<body>
+ 
+  <form action="/class/store" method="post" class="bg-white p-6 rounded-lg">
+    
+    {{template "_classForm.html" .}}
+    
+    
+    <div class="flex justify-center">
+      <form>
+        <button class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full">
+          SUBMIT
+        </button>
+      </form>
+    </div>
+    
+
+   
+</body>
+
+{{ template "footer.html"}}

@@ -1,0 +1,52 @@
+<div class="mb-4">
+  <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+  <label class="block text-gray-700 font-bold mb-2" for="first_name">
+    First Name
+  </label>
+  <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="first_name" type="text" placeholder="firstname" name="FirstName" value="{{.StStudent.FirstName}}">
+  {{with .FormError.FirstName}}
+  {{.}}
+  {{end}}
+</div>
+<div class="mb-4">
+  <label class="block text-gray-700 font-bold mb-2" for="last_name">
+    Last Name
+  </label>
+  <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="last_name" type="text" placeholder="lastname" name="LastName" value="{{.StStudent.LastName}}">
+  {{with .FormError.LastName}}
+  {{.}}
+  {{end}}
+</div>
+
+<div class="mb-4">
+     
+   
+  {{if eq .StStudent.ID 0 }}
+   
+  <select class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="StudentClass" id="" value="{{.StStudent.StudentClass}}">
+    
+      <option value="">Select A Class<option>
+          {{ range .ListClass}}
+              <option value="{{.ID}}">{{.ClassName}}</option>
+          {{ end }}
+  </select>
+  {{end}}
+
+  
+  {{if gt .StStudent.ID 0  }} 
+  <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="class" name="StudentClass" {{if .StStudent.ID }} readonly="" {{end}} value="{{.StStudent.StudentClass}}">
+  {{end}}
+</div>
+
+
+
+<div class="mb-4">
+  <label class="block text-gray-700 font-bold mb-2" for="student_roll">
+    Student Roll
+  </label>
+  <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="student_roll" type="number" placeholder="roll" name="StudentRoll" value="{{.StStudent.StudentRoll}}">
+  {{with .FormError.StudentRoll}}
+              {{.}}
+              {{end}}
+</div>
+

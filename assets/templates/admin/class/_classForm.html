@@ -1,0 +1,21 @@
+
+<input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+<div class="flex justify-center">
+    <div class="w-96">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2" for="class_name">Student Class</label>
+        <input class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="class_name" type="text" name="ClassName" placeholder="Class (1-10)" value="{{.StClass.ClassName}}" />
+          {{with .FormError.ClassName}}
+          {{.}}
+          {{end}}
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+

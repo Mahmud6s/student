@@ -1,0 +1,69 @@
+
+<input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+<div class="mb-4">
+    <label class="block text-gray-700 font-medium mb-2" for="first_name"> First Name</label>
+    <input
+        class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="first_name" type="text" name="FirstName" placeholder="first name" value="{{.User.FirstName}}" />
+    {{with .FormError.FirstName}}
+    {{.}}
+    {{end}}
+</div>
+<div class="mb-4">
+    <label class="block text-gray-700 font-medium mb-2" for="last_name">Last Name</label>
+    <input
+        class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="last_name" type="text" name="LastName" placeholder="last name" value="{{.User.LastName}}" />
+    {{with .FormError.LastName}}
+    {{.}}
+    {{end}}
+</div>
+
+<div class="mb-4">
+    <label class="block text-gray-700 font-medium mb-2" for="username"> Username</label>
+    <input
+        class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="username" type="text" {{if .User.ID }}readonly="" {{end}} name="Username" placeholder="username"
+        value="{{.User.Username}}" />
+        {{with .FormError.Username}}
+        {{.}}
+        {{end}}
+        <br>
+</div>
+<div class="mb-4">
+    <label class="block text-gray-700 font-medium mb-2" for="email">Email</label>
+    <input
+        class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="email" type="email" {{if .User.ID }} readonly="" {{end}} name="Email"
+        placeholder="example@gmail.com" value="{{.User.Email}}" />
+        {{with .FormError.Email}}
+        {{.}}
+        {{end}}
+</div>
+
+
+<div class="mb-6">
+    {{if eq .User.ID 0 }}
+    <label class="block text-gray-700 font-medium mb-2" for="password">Password</label>
+    <input
+        class="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password" type="password" name="Password" placeholder="**********" />
+        {{with .FormError.Password}}
+        {{.}}
+        {{end}}
+
+    {{end}}
+</div>
+
+<div class="mb-6">
+    <div class="form-group">
+        {{if gt .User.ID 0 }}
+        <label for="active_status">...... Status......</label>
+        <br>
+        <label for="Active">Active-</label>
+        <input type="radio" id="active" value="true" name="Status" {{if .User.Status}} checked {{end}}>
+        <label for="Inactive">Inactive-</label>
+        <input type="radio" id="inactive" value="false" name="Status" {{if not .User.Status}} checked {{end}}>
+        {{end}}
+    </div>
+</div>
